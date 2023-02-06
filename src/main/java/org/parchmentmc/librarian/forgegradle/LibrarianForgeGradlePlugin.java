@@ -50,7 +50,7 @@ public class LibrarianForgeGradlePlugin implements Plugin<Project> {
             throw new IllegalStateException("PP null");
         
         channelProviders.addProvider(parchmentProvider);
-
+        System.out.println(channelProviders.getProviderMap());
         project.afterEvaluate(p -> {
             PatcherExtension minecraftExt = project.getExtensions().findByType(PatcherExtension.class);
             if (minecraftExt == null)
