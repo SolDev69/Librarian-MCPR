@@ -23,7 +23,7 @@
 
 package org.parchmentmc.librarian.forgegradle;
 
-package net.minecraftforge.gradle.patcher.PatcherExtension;
+import net.minecraftforge.gradle.patcher.PatcherExtension;
 import net.minecraftforge.gradle.mcp.ChannelProvidersExtension;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
