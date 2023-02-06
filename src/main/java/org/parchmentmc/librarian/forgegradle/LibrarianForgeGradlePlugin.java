@@ -34,6 +34,7 @@ public class LibrarianForgeGradlePlugin implements Plugin<Project> {
     @Override
     public void apply(@Nonnull Project project) {
         ChannelProvidersExtension channelProviders = project.getExtensions().findByType(ChannelProvidersExtension.class);
+        System.out.println(channelProviders);
         if (channelProviders == null)
             throw new IllegalStateException("The Librarian ForgeGradle plugin must be applied after the ForgeGradle one. " +
                     "For more instructions, see https://github.com/ParchmentMC/Librarian/blob/dev/docs/FORGEGRADLE.md");
@@ -45,6 +46,9 @@ public class LibrarianForgeGradlePlugin implements Plugin<Project> {
         });
 
         ParchmentChannelProvider parchmentProvider = new ParchmentChannelProvider();
+        if (parchmentProvider == null)
+            throw new IllegalStateException("PP null");
+        
         channelProviders.addProvider(parchmentProvider);
 
         project.afterEvaluate(p -> {
